@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="./index.js"></script>
+    <title>Json 2 Model</title>
+</head>
+<body style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+    <h1 style="font-size: large;">欢迎使用Flutter转Dart工具 </h1>
+    <div style="width: 100vmax;height: 100vh;background-color: aliceblue;display: flex;justify-content: space-around;align-items: center;">
+        <div class="flex-col" style="height: 90vh;">
+            <h2 class="py-3">这里输入Json字符串:</h2>
+            <textarea name="json" id="raw_json" class="p-3 rounded-xl h-5/6 text-sm"></textarea>
+        </div>
+        
+        <div style="display: flex;flex-direction: column;">
+            输入类名: <input type="text" id="id_class_name">
+            <button class="p-6 rounded-sm shadow-sm" onclick="trans()">转换</button>
+        </div>
+        <div class="flex-col" style="height: 90vh;">
+            <h2 class="py-3">转换后的模型类:</h2>
+            <textarea disabled name="json" id="id_model" class="p-3 rounded-xl h-5/6 text-xs" style="width: 300px;"></textarea>
+        </div>
+        <div class="flex-col" style="height: 90vh;">
+            <h2 class="py-3">转换后的模型.g文件:</h2>
+            <textarea disabled name="json" id="id_model_g" class="p-3 rounded-xl h-5/6 text-xs min-w-full" style="width: 300px;"></textarea>
+        </div>
+    </div>
+</body>
+</html>
