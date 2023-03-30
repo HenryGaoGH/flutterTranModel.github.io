@@ -15,7 +15,7 @@ function trans() {
     clsName = getClassName();
     text = document.getElementById("raw_json").value;
     if (text.length == 0) return;
-    obj = JSON.parse(text);
+    obj = JSON.parse(text.replace(/\/\/.*/g,''));
     if (obj == null || obj == undefined || obj == false) {
         alert("json 字符串不正确 请检查");
         return;
@@ -35,10 +35,7 @@ function trans() {
         } else if (typeof eval("obj."+key) === 'string') {     // 字符串
             _pSPeix = 'String';
             propsStr = _pSPeix + ' ' + key + ';';
-        } else {
-            _pSPeix = key;
-            propsStr = key + ' ' + key + ';';
-        }
+        } else propsStr = _pSPeix + ' ' + key + ';';
         pStr += `
             @JsonKey(name: '${key}')
             ${propsStr}
